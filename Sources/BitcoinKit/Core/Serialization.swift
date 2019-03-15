@@ -119,6 +119,7 @@ extension Data {
 
 extension Data {
     public init?(hex: String) {
+        let hex = hex.replacingOccurrences(of: "0x", with: "")
         let len = hex.count / 2
         var data = Data(capacity: len)
         for i in 0..<len {
